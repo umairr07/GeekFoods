@@ -5,7 +5,7 @@ import {
   X_LOGO,
   GIT_LOGO,
   DRIBBLE_LOGO,
-} from "../utils/constant";
+} from "../../utils/constant";
 
 const Footer = () => {
   return (

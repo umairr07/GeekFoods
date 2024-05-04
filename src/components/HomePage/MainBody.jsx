@@ -1,4 +1,4 @@
-import { BACK_IMG } from "../utils/constant";
+import { BACK_IMG } from "../../utils/constant";
 
 const MainBody = () => {
   return (
@@ -8,7 +8,7 @@ const MainBody = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        height: "90vh",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

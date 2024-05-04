@@ -1,4 +1,4 @@
-import { HOME_IMG } from "../utils/constant";
+import { HOME_IMG } from "../../utils/constant";
 
 const MidBody = () => {
   return (

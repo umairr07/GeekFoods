@@ -1,5 +1,5 @@
 // import { info } from "autoprefixer";
-import { GLADIS_IMG } from "../utils/constant";
+import { GLADIS_IMG } from "../../utils/constant";
 const Cards = () => {
   let cardsInfo = [
     {
