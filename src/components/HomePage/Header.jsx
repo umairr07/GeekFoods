@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LOGO_URl } from "../../utils/constant";
 
 const Header = () => {
@@ -10,10 +11,18 @@ const Header = () => {
         </div>
 
         <ul className="flex gap-8 text-xl items-center cursor-pointer">
-          <li className="hover:text-[#2762D4] text-[#2762D4]">Home</li>
-          <li className="hover:text-[#2762D4]">Quotes</li>
-          <li className="hover:text-[#2762D4]">Restaurants</li>
-          <li className="hover:text-[#2762D4]">Foods</li>
+          <Link to="/" className="hover:text-[#2762D4] text-[#2762D4]">
+            Home
+          </Link>
+          <Link to="/quotes" className="hover:text-[#2762D4]">
+            Quotes
+          </Link>
+          <Link to="/restaurants" className="hover:text-[#2762D4]">
+            Restaurants
+          </Link>
+          <Link to="/foods" className="hover:text-[#2762D4]">
+            Foods
+          </Link>
           <li className="hover:text-[#2762D4]">Contact</li>
         </ul>
 
