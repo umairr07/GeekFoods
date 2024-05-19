@@ -19,7 +19,7 @@ export const Restaurants = ({
   }
 
   return (
-    <div className="w-[450px] rounded-lg shadow-lg flex flex-col justify-between gap-10">
+    <div className="w-[400px] border-2 rounded-lg shadow-lg flex flex-col justify-between gap-10">
       <div className="p-3">
         <div className="flex items-center">
           <p className="text-xl font-semibold">{resName}</p>

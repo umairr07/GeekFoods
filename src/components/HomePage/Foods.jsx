@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Loader from "./Loader";
 
 const Foods = () => {
   const [food, setFood] = useState([]);
   const [inputVal, setInputVal] = useState("");
   const [countries, setCountries] = useState([]);
   const [slectCountry, setSlectCountry] = useState("");
+
+  const navigate = useNavigate();
   async function getFood() {
     const response = await fetch(
       "https://www.themealdb.com/api/json/v1/1/search.php?s="
@@ -66,33 +70,41 @@ const Foods = () => {
         </select>
       </div>
       <div className="pt-14 flex flex-wrap gap-20 w-[90%] m-auto justify-center items-center">
-        {food
-          .filter((item) => {
-            return (
-              item.strMeal.toLowerCase().includes(inputVal.toLowerCase()) &&
-              (slectCountry === "" || item.strArea === slectCountry)
-            );
-          })
-          .map((item) => {
-            return (
-              <div
-                key={item.iidCategory}
-                className="flex flex-col p-2 gap-5 rounded-lg shadow-xl cursor-pointer
+        {food.length === 0 ? (
+          <Loader />
+        ) : (
+          food
+            .filter((item) => {
+              return (
+                item.strMeal.toLowerCase().includes(inputVal.toLowerCase()) &&
+                (slectCountry === "" || item.strArea === slectCountry)
+              );
+            })
+            .map((item) => {
+              return (
+                <div
+                  key={item.idMeal}
+                  className="flex flex-col p-2 gap-5 rounded-lg shadow-xl cursor-pointer
                 "
-              >
-                <img
-                  src={item.strMealThumb}
-                  alt=""
-                  className="w-[300px] h-[200px] "
-                />
-                <div className="p-2">
-                  <p className="text-xl font-semibold">{item.strMeal}</p>
-                  <p className="text-[#9A9A9A]">{item.strArea} foods</p>
-                  <p className="">#{item.strCategory}</p>
+                  onClick={() => {
+                    console.log(item.idMeal);
+                    navigate(`/fooddetails/${item.idMeal}`);
+                  }}
+                >
+                  <img
+                    src={item.strMealThumb}
+                    alt=""
+                    className="w-[300px] h-[200px] "
+                  />
+                  <div className="p-2">
+                    <p className="text-xl font-semibold">{item.strMeal}</p>
+                    <p className="text-[#9A9A9A]">{item.strArea} foods</p>
+                    <p className="">#{item.strCategory}</p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+        )}
       </div>
     </>
   );

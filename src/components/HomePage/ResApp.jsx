@@ -19,7 +19,7 @@ function ResApp() {
     <div>
       <>
         <div>
-          <div className="flex justify-between items-center pt-36">
+          <div className="flex justify-around items-center pt-36">
             <input
               type="text"
               placeholder="Search for restaurants"

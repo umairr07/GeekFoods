@@ -9,6 +9,8 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import ResApp from "./components/HomePage/ResApp.jsx";
 import { Quotes } from "./components/HomePage/Quotes.jsx";
 import Foods from "./components/HomePage/Foods.jsx";
+import { FoodDetails } from "./components/HomePage/FoodDetails.jsx";
+import Contacts from "./components/HomePage/Contacts.jsx";
 
 function App() {
   return (
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "foods",
         element: <Foods />,
+      },
+      {
+        path: "contacts",
+        element: <Contacts />,
+      },
+      {
+        path: "fooddetails/:id",
+        element: <FoodDetails />,
       },
     ],
   },
